@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+// import SignUp from './Components/SignUp';
+// import Login from './Components/Login';
+// import DatePicker from 'react-month-picker';
+import HorizontalNavbar from './Components/Navbar/horizontalNavbar';
+import VerticalNavbar from './Components/Navbar/verticalNavbar'
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import './stylesheet/biraStyleSheet.css'
+
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <HorizontalNavbar/>
+      <VerticalNavbar/>
+
+
+      {/* <Router>
+
+        <Switch>
+                 <Route path="/" exact component={ () =>  ( <Login/> )  } />      
+
+                 <Route path="/signUp" exact component={ () =>  (<SignUp/> )  } />      
+
+         </Switch>
+       </Router> */}
     </div>
   );
 }
