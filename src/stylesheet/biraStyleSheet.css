@@ -4,7 +4,7 @@
 #nav-header{
     flex-direction: row;
     height: 70px;
-;}
+}
 
 .logo{
     font-weight: bold;
@@ -60,7 +60,7 @@ margin-left: 20px;
 
 #vertical-navbar-list{
     list-style: none;
-    margin: 0;
+    margin-bottom: 0;
     padding: 0;
     align-content: space-around;
 }
@@ -72,7 +72,8 @@ margin-left: 20px;
     margin-top: 40px;
     text-align: center;
     background-color:rgb(29, 19, 70) ;
-    color: rgb(87, 87, 155);
+    color: rgb(228, 220, 220);
+    /* color: rgb(59, 59, 192); */
 }
 
 
@@ -107,20 +108,36 @@ margin-left: 20px;
 
 }
 
+#heading-create{
+    /* border: 2px solid green; */
+    margin-left: -40px;
+    margin-bottom: 40px;
+
+}
+
+.dropdown{
+    width: 400px;
+    height: 40px;
+}
+
 #input-title{
       
-   width: 800px;
+   width: 910px;
    height: 70px;
-   padding-left: 20px;
+   padding-left: 15px;
 
 }
 
 #btn_create_submit{
-    background: green;
-    /* float: right; */
-    width: 150px;
-    height: 40px;
+    background: rgb(58, 60, 184);
+    float: right;
+    width: 175px;
+    height: 50px;
     margin-top: 40px;
+    margin-right: 300px;
+    border-radius: 5px;
+    border: none;
+    color: white;
 }
 
 /* #create-elements{
@@ -131,12 +148,27 @@ padding-left: 100px;
 #text-box{
     width: 400px;
     height: 40px;
-    justify-content: space-around;
+    margin-right: 100px;
+    /* justify-content: space-around; */
 
 }
 
 
 /* Styling for Issues.js */
+
+#heading-issues{
+    margin-left: -1000px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    font-weight: bold;
+}
+#issues-style{
+    margin-left: 220px;
+    margin-top: -920px;
+    background-color: rgb(202, 208, 212);
+    /* padding-bottom: 20px; */
+    padding-left: 10px;
+}
 
 #table{
 
@@ -145,15 +177,18 @@ padding-left: 100px;
 
     /* width: 800px; */
     /* height: 250px; */
-    border: 10px solid green;
     margin-left: 40px;
+    background-color: white;
+    border-bottom: 10px solid   rgb(202, 208, 212);
+    
 
 }
 
 
 #flexbox{
     flex-direction: column;
-    background-color: rgb(202, 192, 192);
+    background-color: rgb(184, 183, 183);
+    margin-right: 30px;
     /* justify-content: end; */
     /* margin-left: 30px;
     margin-bottom: 30px; */
@@ -162,13 +197,91 @@ padding-left: 100px;
 }
 
 #flexbox1 {
-    border:2px solid green;
+    /* border:2px solid green; */
     /* padding-right: 50vh; */
     flex-direction: column;
     /* margin-bottom: 20px; */
     /* display: flex; */
-        justify-content: space-between;
-
-
+        /* justify-content: space-between; */
+     
 
 }
+
+#issues-progress{
+    width: 40px;
+    height: 20px;
+    /* border: none; */
+    background-color: rgb(190, 144, 58);
+    color: white;
+    text-align: center;
+}
+
+#issues-done{
+    width: 40px;
+    height: 20px;
+    /* border: none; */
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+
+
+/* Styling for Issues_In_Detail.js */
+
+
+#issuesInDetail{
+    margin-left: 250px;
+    margin-top: -900px;
+}
+
+#btn_issues_in_detail{
+    width: 120px;
+    height: 40px;
+    /* border:2px solid green; */
+    border: none;
+    margin-right: 40px;
+    margin-top: 30px;
+    
+}
+
+
+#list{
+    display: block;
+    text-align: left;
+}
+
+#issue_detail1{
+
+    width: 300px;
+    border: 2px solid green;
+    margin-left: 20px;
+    /* margin-right: 1000px; */
+    margin-top: 50px;
+    padding-left: 40px;
+    justify-content: space-between;
+}
+
+#issue_detail2{
+    border: 2px solid green;
+    margin-left: 400px;
+    width: 300px;
+    margin-top: -230px;
+    padding-left: 40px;
+}
+
+#issue_detail3{
+    border: 2px solid green;
+    margin-left: 800px;
+    width: 300px;
+    margin-top: -100px;
+    padding-left: 40px;
+
+}
+
+/* #spn_issue_detail1{
+    border: 2px solid green;
+
+
+    margin-left: 120px;
+    text-align: left;
+} */
