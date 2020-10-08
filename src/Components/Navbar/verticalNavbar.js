@@ -18,16 +18,22 @@ const VerticalNavbar=()=>{
 
     const onClickHandlerCreate=()=>{
        
-        history.push('/');
+        history.push('/create');
 
   }
+
+  const onClickHandlerDashboard=()=>{
+       
+    history.push('/dashboard');
+
+}
 
     return (
         <div id="vertical-navbar" >
 
             <ul id="vertical-navbar-list">
 
-                <li><button class="btn" ><img id="img-vertical-navbar" src={DashboardImage}/> Dashboard</button></li>
+                <li><button class="btn" onClick={onClickHandlerDashboard} ><img id="img-vertical-navbar" src={DashboardImage}   /> Dashboard</button></li>
                 <li><button id="btn_issue" class="btn"  onClick={onClickHandlerIssues} > <img id="img-vertical-navbar" src={IssuesImage}/> Issues </button></li>
                 <li><button id="btn_create" class="btn" onClick={onClickHandlerCreate} > <img id="img-vertical-navbar" src={CreateImage}/> Create</button></li>
                 

@@ -28,20 +28,20 @@ function issuesInDetailComponent() {
 
 
                  <div id="issue_detail1">
-                     <label id="list"> <span >Type:</span>                      <span id="spn_issue_detail1">Task</span> </label>
-                     <label id="list"> <span id="">Priority:</span>             <span id="spn_issue_detail1">{dataBasedOnID.status}</span> </label>
-                     <label id="list"> <span id="">Affects Version's:</span>    <span id="spn_issue_detail1">None</span> </label>
-                     <label id="list"> <span id="">Components/s:</span>         <span id="spn_issue_detail1"> None</span> </label>
-                     <label id="list"> <span id="">Labels:</span>               <span id="spn_issue_detail1"> Webetc</span> </label>
+                     <label id="list"> <span >Type:</span>                      <span id="spn_issue_detail1"  class="span_values">Task</span> </label>
+                     <label id="list"> <span id="">Priority:</span>             <span id="spn_issue_detail2" class="span_values">{dataBasedOnID.status}</span> </label>
+                     <label id="list"> <span id="">Affects Version's:</span>    <span id="spn_issue_detail3" class="span_values">None</span> </label>
+                     <label id="list"> <span id="">Components/s:</span>         <span id="spn_issue_detail4" class="span_values"> None</span> </label>
+                     <label id="list"> <span id="">Labels:</span>               <span id="spn_issue_detail5" class="span_values"> Webetc</span> </label>
                      <label id="list"> <span id="">Sprint:</span> </label>
-                     <label id="list"> <span id="">Story Points:</span>         <span id="spn_issue_detail1">6</span></label>
+                     <label id="list"> <span id="">Story Points:</span>         <span id="spn_issue_detail6">6</span></label>
                  </div>
 
 
                  <div id="issue_detail2">
-                     <label id="list"> <span id="">Status:</span>  <span>New</span> </label>
-                     <label id="list"> <span id="">Resolution:</span>  <span>Unresolved</span></label>
-                     <label id="list"> <span id="">Fix Version's:</span>  <span>None</span></label>
+                     <label id="list"> <span id="">Status:</span>  <span id="spn_values1">New</span> </label>
+                     <label id="list"> <span id="">Resolution:</span>  <span id="spn_values2">Unresolved</span></label>
+                     <label id="list"> <span id="">Fix Version's:</span>  <span id="spn_values3">None</span></label>
                      
                  </div>
 
@@ -56,9 +56,11 @@ function issuesInDetailComponent() {
                  </div>
 
 
-                 <div>
+                 <div id="issue_detail4">
                      <label>Description <p>{dataBasedOnID.description}</p></label>
                      <label>Agile <p>View on board</p></label>
+                     <p>Attachment</p>
+                     <p> <input id="attachment_pdf" type="text"/> </p>
                  </div>
 
         </div>

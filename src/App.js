@@ -1,7 +1,8 @@
 import React from 'react';
 import CreateCompleteComponent from './Components/Create/CreateCompleteComponent';
 import IssuesCompleteComponent from './Components/Issues/IssuesCompleteComponent';
-import IssuesInDetailCompleteComponent from './Components/IssuesInDetail/IssuesInDetailCompleteComponent'
+import IssuesInDetailCompleteComponent from './Components/IssuesInDetail/IssuesInDetailCompleteComponent';
+import DashboardCompleteComponent from './Components/Dashboard/DashboardCompleteComponent'
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import './stylesheet/biraStyleSheet.css'
 // import DatePicker from 'react-month-picker';
@@ -15,7 +16,9 @@ function App() {
           <Router>
 
             <Switch>
-                    <Route path="/" exact component={ () =>  ( <CreateCompleteComponent/> )  } />      
+                    <Route path="/create" exact component={ () =>  ( <CreateCompleteComponent/> )  } />      
+
+                    <Route path="/dashboard" exact component={ () =>  ( <DashboardCompleteComponent/> )  } />      
 
                     <Route path="/issues" exact component={ () =>  (<IssuesCompleteComponent/> )  } />      
                     

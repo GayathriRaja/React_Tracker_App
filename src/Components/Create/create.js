@@ -12,20 +12,37 @@ const CreateComponent=()=>{
 const [message,setMessage]=useState('');
 
 
-var title=null;
-var type=null;
-var status=null;
-var priority=null;
-var resolution=null;
-var affectVersion=null;
-var fixVersion=null;
-var component=null;
-var assignee=null;
-var label=null;
-var reporter=null;
-var sprint=null;
-var description=null;
-var storyPoint=null;
+const [title,setTitle]=useState('');
+const [type,setType]=useState('');
+const [status,setStatus]=useState('');
+const [priority,setPriority]=useState('');
+const [resolution,setResolution]=useState('');
+const [affectVersion,setAffectVersion]=useState('');
+const [fixVersion,setFixVersion]=useState('');
+const [component,setComponent]=useState('');
+const [assignee,setAssignee]=useState('');
+const [label,setLabel]=useState('');
+const [reporter,setReporter]=useState('');
+const [sprint,setSprint]=useState('');
+const [description,setDescription]=useState('');
+const [storyPoint,setStoryPoint]=useState('');
+
+
+
+// var title=null;
+// var type=null;
+// var status=null;
+// var priority=null;
+// var resolution=null;
+// var affectVersion=null;
+// var fixVersion=null;
+// var component=null;
+// var assignee=null;
+// var label=null;
+// var reporter=null;
+// var sprint=null;
+// var description=null;
+// var storyPoint=null;
 // var attachment=null;
 
 
@@ -41,67 +58,53 @@ var storyPoint=null;
 
 
       const onChangeHandlerTitle=(e)=>{
-           title = e.target.value;
-           console.log("title:"+title);      
+          setTitle(e.target.value);
       }
       const onChangeHandlerType=(e)=>{
-            type = e.target.value;
-            console.log("type:"+type);      
+            setType(e.target.value);
        }
        const onChangeHandlerStatus=(e)=>{
-            status = e.target.value;
-            console.log("status:"+status);      
+            setStatus(e.target.value);
        }
        const onChangeHandlerPriority=(e)=>{
-            priority = e.target.value;
-            console.log("priority:"+priority);      
+            setPriority(e.target.value);
        }
        const onChangeHandlerResolution=(e)=>{
-            resolution = e.target.value;
-            console.log("resolution:"+resolution);      
+            setResolution(e.target.value);
        }
        const onChangeHandlerAffectVersion=(e)=>{
-            affectVersion = e.target.value;
-            console.log("affectVersion:"+affectVersion);      
+            setAffectVersion(e.target.value);
        }
        const onChangeHandlerFixVersion=(e)=>{
-            fixVersion = e.target.value;
-            console.log("fixVersion:"+fixVersion);      
+            setFixVersion(e.target.value);
        }
 
        const onChangeHandlerComponent=(e)=>{
-            component = e.target.value;
-            console.log("component:"+component);      
+            setComponent(e.target.value);
        }
 
        const onChangeHandlerAssignee=(e)=>{
-            assignee = e.target.value;
-            console.log("assignee:"+assignee);      
+            setAssignee(e.target.value);
        }
 
        const onChangeHandlerLabel=(e)=>{
-            label = e.target.value;
-            console.log("label:"+label);      
+            setLabel(e.target.value);
        }
  
        const onChangeHandlerReporter=(e)=>{
-            reporter = e.target.value;
-            console.log("reporter:"+reporter);      
+            setReporter(e.target.value);
        }
 
        const onChangeHandlerSprint=(e)=>{
-            sprint = e.target.value;
-            console.log("sprint:"+sprint);      
+            setSprint(e.target.value);
        }
 
        const onChangeHandlerDescription=(e)=>{
-            description = e.target.value;
-            console.log("description:"+description);      
+            setDescription(e.target.value);
        }
 
        const onChangeHandlerStoryPoint=(e)=>{
-            storyPoint = e.target.value;
-            console.log("storyPoint:"+storyPoint);      
+            setStoryPoint(e.target.value);
        }
 
 
@@ -199,9 +202,9 @@ var storyPoint=null;
 
                         <select  onChange={onChangeHandlerPriority} id="priority" class="dropdown">
                                     <option  value=""> </option>
-                                    <option  value="High">High Priority</option>
-                                    <option  value="Low">Low Priority</option>
-                                    <option  value="Medium">Medium Priority</option>
+                                    <option  value="HighPriority">High Priority</option>
+                                    <option  value="LowPriority">Low Priority</option>
+                                    <option  value="MediumPriority">Medium Priority</option>
                         </select>
             </label>
 
@@ -238,7 +241,7 @@ var storyPoint=null;
             <label for="assignee" id="text-box" class="dropdown-button">Assignee:
                   <select  onChange={onChangeHandlerAssignee} id="assignee" class="dropdown">
                         <option  value=""> </option>
-                        <option  value="sija"  >  Sijo M Peter</option>
+                        <option  value="sija"  > <img src={SijoImage}/> Sijo M Peter</option>
                         <option  value="saanvi">  Saanvi</option>
                         <option  value="sanal">  Sanal</option>
                         <option  value="vivan">  Vivaan</option>

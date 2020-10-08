@@ -85,7 +85,7 @@ const onClickHandlerIssues=(id)=>{
                                                                                                         </tr>
                                                                                                         <tr> <td><h5>{todoListValue.title}</h5></td> </tr>
                                                                                                         <tr> <td>{todoListValue.description}</td> </tr>
-                                                                                                        {/* <tr> Lorem ipsum dolor sit amet abc </tr> */}
+                                                                                                        <tr><p></p></tr>
                                                                                                         <tr>
                                                                                                             <td>Assignee <td> <img src={SijoImage} /></td>
                                                                                                             <td>{todoListValue.assigne} <tr>UI/UX Designer</tr></td> </td> 
@@ -122,7 +122,9 @@ const onClickHandlerIssues=(id)=>{
                                                                                                         <td>{progress.date}</td>
                                                                                                     </tr>
                                                                                                     <tr> <td><h5>{progress.title}</h5></td> </tr>
-                                                                                                    <tr> <td>{progress.description}</td> </tr>                                                                                                    <tr>
+                                                                                                    <tr> <td>{progress.description}</td> </tr>  
+                                                                                                    <tr><p></p></tr>
+                                                                                                    <tr>
                                                                                                         <td>Assignee <td> <img src={SijoImage} /></td>
                                                                                                         <td>{progress.assigne}<tr>UI/UX Designer</tr></td> </td> 
                                                                                                         <td>Status <tr id="issues-progress">{progress.status}</tr></td>
@@ -155,7 +157,9 @@ const onClickHandlerIssues=(id)=>{
                                                                                                     <td>{issuesDone.date}</td>
                                                                                                 </tr>
                                                                                                 <tr> <td><h5>{issuesDone.title}</h5></td> </tr>
-                                                                                                <tr> <td>{issuesDone.description}</td> </tr>                                                                                                <tr>
+                                                                                                <tr> <td>{issuesDone.description}</td> </tr>     
+                                                                                                <tr><p></p></tr>
+                                                                                               <tr>
                                                                                                     <td>Assignee <td> <img src={SijoImage} /></td>
                                                                                                     <td>{issuesDone.assigne}<tr>UI/UX Designer</tr></td> </td> 
                                                                                                     <td>Status <tr id="issues-done">{issuesDone.status}</tr></td>
