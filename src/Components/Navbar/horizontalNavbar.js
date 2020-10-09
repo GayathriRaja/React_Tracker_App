@@ -3,8 +3,18 @@ import Logo from '../Images/Logo.svg';
 // import SearchIcon from '../Images/icon_search.svg';
 import SijoImage from '../Images/Sijo.svg';
 import Notification_icon from '../Images/notification_icon2.png';
+import {useHistory} from 'react-router-dom'
 
- const header=()=>{
+ const Header=()=>{
+
+    const history=useHistory();
+
+const onClickHandlerHomePage=()=>{
+     
+    history.push('/')  
+
+}
+
     return (
         <div>
  
@@ -13,7 +23,7 @@ import Notification_icon from '../Images/notification_icon2.png';
 
 
 
-                    <a class="navbar-brand" class="logo" href="#"><img id="logo-image" width="150px" height="150px" class="logo" src={Logo}/><span id="logo-name">tracker</span></a>
+                    <a class="navbar-brand" class="logo"  onClick={onClickHandlerHomePage}><img id="logo-image" width="150px" height="150px" class="logo" src={Logo}/><span id="logo-name">tracker</span></a>
 
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" id="search-header" type="search" placeholder="search.."/> 
@@ -33,4 +43,4 @@ import Notification_icon from '../Images/notification_icon2.png';
 }
 
 
-export default header
+export default Header

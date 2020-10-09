@@ -7,7 +7,10 @@ import {Line} from 'react-chartjs-2'
 const Dashboard=()=>{
 
     const [selectedDate,setSelectedDate]=useState('');
-    const [count,setCount]=useState(3);
+    const [countHigh,setCountHigh]=useState(3);
+    const [countDatewise,setCountDatewise]=useState(3);
+
+    const [getDetails,setGetDetails]=useState([]);
     const [viewAllHighPriority,setViewAllHighPriority]=useState(true);
     const [viewAllLatesUpdate,setViewAllLatesUpdate]=useState(true);
 
@@ -15,13 +18,17 @@ const Dashboard=()=>{
     //Dummy Data
 
 
-    var dummyData=[{id:1000156,date:"10/05/2020",title:"Lorem ipsum dolor sit",description:"Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit",assigne:"Sijo",status:'HighPriority'},
-        {id:1000156,date:"10/05/2020",title:"Lorem ipsum dolor sit",description:"Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit",assigne:"Sijo",status:'HighPriority'},
-        {id:1000157,date:"10/05/2020",title:"Lorem ipsum dolor sit",description:"Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit",assigne:"Sijo",status:'LowPriority'},
-        {id:1000158,date:"10/05/2020",title:"Lorem ipsum dolor sit",description:"Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit",assigne:"Sijo",status:'HighPriority'},
-        {id:1000159,date:"10/05/2020",title:"Lorem ipsum dolor sit",description:"Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit",assigne:"Sijo",status:'LowPriority'}
+    // var dummyData=[{id:1000156,date:"10/05/2020",title:"Lorem ipsum dolor sit",description:"Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit",assigne:"Sijo",status:'HighPriority'},
+    //     {id:1000156,date:"10/05/2020",title:"Lorem ipsum dolor sit",description:"Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit",assigne:"Sijo",status:'HighPriority'},
+    //     {id:1000157,date:"10/05/2020",title:"Lorem ipsum dolor sit",description:"Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit",assigne:"Sijo",status:'LowPriority'},
+    //     {id:1000158,date:"10/05/2020",title:"Lorem ipsum dolor sit",description:"Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit",assigne:"Sijo",status:'HighPriority'},
+    //     {id:1000159,date:"10/05/2020",title:"Lorem ipsum dolor sit",description:"Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit",assigne:"Sijo",status:'LowPriority'}
 
-        ]
+    //     ]
+
+    fetch('http://localhost:8000/api/v1/issues/').then(result=>result.json()).then(result=>{
+        setGetDetails(result)
+    })
 
 
 
@@ -50,22 +57,31 @@ const Dashboard=()=>{
 
 
 
-const onClickHandlerCount=()=>{
-    setCount(dummyData.length)
+const onClickHandlerCount=(str)=>{
+    // setCount(dummyData.length)
+    if(str="high")
+    {
+        setCountHigh(10);
+        
+    }
+    else if(str="datewise")
+    {
+        setCountDatewise(10);
+    }
 }
 
 
 const  onClickHandlerChangeCount1=()=>{
     setViewAllHighPriority(false);
     // if(viewAll){
-         setCount(3)
+        setCountHigh(3)
     // }
 }
 
 const  onClickHandlerChangeCount2=()=>{
-    setViewAllLatesUpdate(false);
+    set(false);
     // if(viewAll){
-         setCount(3)
+        setCountDatewise(3)
     // }
 }
 
@@ -101,9 +117,9 @@ const  onClickHandlerChangeCount2=()=>{
                         
                         <h4 id="heading_highpriority">High Priority</h4>
                         {
-                            dummyData.map(data=>{
+                            getDetails.map(data=>{
 
-                                if(data.status=="HighPriority"){
+                                if(data.priority=="HIGH" && getDetails.indexOf(data)<countHigh){
                                     // viewCount--;
                                     return (
                                             <div id="highpriority_details">
@@ -116,8 +132,8 @@ const  onClickHandlerChangeCount2=()=>{
                                 })
                         }
                         { viewAllHighPriority ?
-                            <button  onClick={onClickHandlerCount} id="view_all_btn">View All</button>
-                            : !viewAllHighPriority ? <button  onClick={onClickHandlerChangeCount1} id="view_all_btn">See Less</button>
+                            <button  onClick={()=>{onClickHandlerCount("high")}} id="view_all_btn">View All</button>
+                            : !viewAllHighPriority ? <button  onClick={()=>{onClickHandlerChangeCount1("high")}} id="view_all_btn">See Less</button>
                             :null
                         }
 
@@ -130,9 +146,9 @@ const  onClickHandlerChangeCount2=()=>{
                         
                         <h4 id="heading_recently_updated_issues">Recently Updated Issue</h4>
                         {
-                            dummyData.map(data=>{
+                            getDetails.map(data=>{
 
-                                if(data.id && dummyData.indexOf(data)<count ){
+                                if(data.id && getDetails.indexOf(data)<countDatewise ){
                                     return (
                                             <div id="highpriority_details">
                                                 <h5>{data.title}</h5> 
@@ -146,8 +162,8 @@ const  onClickHandlerChangeCount2=()=>{
                         }
 
                         { viewAllLatesUpdate ?
-                            <button  onClick={onClickHandlerCount} id="view_all_btn">View All</button>
-                            : !viewAllLatesUpdate ?<button  onClick={onClickHandlerChangeCount2} id="view_all_btn">See Less</button>
+                            <button  onClick={()=>{onClickHandlerCount("datewise")}} id="view_all_btn">View All</button>
+                            : !viewAllLatesUpdate ?<button  onClick={()=>{onClickHandlerChangeCount2("datewise")}} id="view_all_btn">See Less</button>
                             :null
                         }
 
