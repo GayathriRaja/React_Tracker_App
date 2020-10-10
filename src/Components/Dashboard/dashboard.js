@@ -14,6 +14,8 @@ const Dashboard=()=>{
     const [viewAllHighPriority,setViewAllHighPriority]=useState(true);
     const [viewAllLatesUpdate,setViewAllLatesUpdate]=useState(true);
 
+var value1=countHigh;
+var value2=countDatewise;
 
     //Dummy Data
 
@@ -57,30 +59,28 @@ const Dashboard=()=>{
 
 
 
-const onClickHandlerCount=(str)=>{
-    // setCount(dummyData.length)
-    if(str="high")
-    {
+const onClickHandlerCountHigh=()=>{
+    setViewAllHighPriority(false);
         setCountHigh(10);
         
     }
-    else if(str="datewise")
-    {
+
+    const onClickHandlerCountDatewise=()=>{
+        setViewAllLatesUpdate(false);
+
         setCountDatewise(10);
+        
     }
-}
 
 
-const  onClickHandlerChangeCount1=()=>{
-    setViewAllHighPriority(false);
-    // if(viewAll){
+
+const  onClickHandlerSeeLessHigh=()=>{
+    setViewAllHighPriority(true);
         setCountHigh(3)
-    // }
 }
 
-const  onClickHandlerChangeCount2=()=>{
-    set(false);
-    // if(viewAll){
+const  onClickHandlerSeeLessDatewise=()=>{
+    setViewAllLatesUpdate(true);
         setCountDatewise(3)
     // }
 }
@@ -117,14 +117,16 @@ const  onClickHandlerChangeCount2=()=>{
                         
                         <h4 id="heading_highpriority">High Priority</h4>
                         {
-                            getDetails.map(data=>{
 
-                                if(data.priority=="HIGH" && getDetails.indexOf(data)<countHigh){
-                                    // viewCount--;
+                            getDetails.map(data=>{
+                                 
+
+                                if(data.priority=="HIGH" && value1>=0){
+                                    value1--;
                                     return (
                                             <div id="highpriority_details">
                                                 <h5>{data.title}</h5> 
-                                                <label>{data.date}</label>
+                                                <label>{data.created_at}</label>
                                                 <p>{data.description}</p>    
                                             </div>
                                         )
@@ -132,9 +134,9 @@ const  onClickHandlerChangeCount2=()=>{
                                 })
                         }
                         { viewAllHighPriority ?
-                            <button  onClick={()=>{onClickHandlerCount("high")}} id="view_all_btn">View All</button>
-                            : !viewAllHighPriority ? <button  onClick={()=>{onClickHandlerChangeCount1("high")}} id="view_all_btn">See Less</button>
-                            :null
+                            <button  onClick={onClickHandlerCountHigh}  id="view_all_btn">View All</button>
+                            :   <button  onClick={onClickHandlerSeeLessHigh} id="view_all_btn">See Less</button>
+                            
                         }
 
 
@@ -146,13 +148,14 @@ const  onClickHandlerChangeCount2=()=>{
                         
                         <h4 id="heading_recently_updated_issues">Recently Updated Issue</h4>
                         {
-                            getDetails.map(data=>{
+                            getDetails.reverse().map(data=>{
 
-                                if(data.id && getDetails.indexOf(data)<countDatewise ){
+                                if(data.id  && value2>=0){
+                                    value2--;
                                     return (
                                             <div id="highpriority_details">
                                                 <h5>{data.title}</h5> 
-                                                <label>{data.date}</label>
+                                                <label>{data.created_at}</label>
                                                 <p>{data.description}</p> 
                                                   
                                             </div>
@@ -162,9 +165,9 @@ const  onClickHandlerChangeCount2=()=>{
                         }
 
                         { viewAllLatesUpdate ?
-                            <button  onClick={()=>{onClickHandlerCount("datewise")}} id="view_all_btn">View All</button>
-                            : !viewAllLatesUpdate ?<button  onClick={()=>{onClickHandlerChangeCount2("datewise")}} id="view_all_btn">See Less</button>
-                            :null
+                            <button  onClick={onClickHandlerCountDatewise}  id="view_all_btn">View All</button>
+                            : <button  onClick={onClickHandlerSeeLessDatewise} id="view_all_btn">See Less</button>
+                            
                         }
 
 

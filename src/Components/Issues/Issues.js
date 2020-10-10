@@ -28,15 +28,19 @@ const Issues=(props)=>{
 
 
 
-
+      const  getID= useSelector(state=>state.getID.IssueID);
 
 
 
 const onClickHandlerIssues=(id)=>{
 
-     history.push('/details');
+     
+        // console.log("id:"+getID)
+        //  history.push('/details/:getID');
+        history.push('/issues/'+id);
+    
+
     //  setGetID(id);
-     console.log("ID:"+id);
 
      //Using redux to store the id and pass this id to issuesInDetail and using restApi get id specific data and display in IssuesInDetial.js
 
@@ -103,7 +107,7 @@ const onClickHandlerIssues=(id)=>{
 
                                                                                                             }
 
-                                                                                                         <td>Status <tr>{result.priority}</tr></td>
+                                                                                                         <td>Status <tr  id="issues-todo">{result.priority}</tr></td>
 
 
                                                                                                             
